@@ -1,13 +1,14 @@
 Summary:	Measures source lines of code (SLOC) in programs
 Summary(pl):	Mierzenie liczby linii kodu (SLOC) ¼ród³owego programów
 Name:		sloccount
-Version:	2.24
+Version:	2.26
 Release:	1
 License:	GPL v2
 Group:		Development/Tools
 Source0:	http://www.dwheeler.com/sloccount/%{name}-%{version}.tar.gz
-# Source0-md5:	b73f01e3c9d12ce028ee1d9c3b78990c
+# Source0-md5:	09abd6e2a016ebaf7552068a1dba1249
 URL:		http://www.dwheeler.com/sloccount/
+BuildRequires:	flex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
