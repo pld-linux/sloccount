@@ -19,7 +19,7 @@ software systems (thus, SLOCCount is a "software metrics tool" or
 wide number of languages; listed alphabetically, they are: Ada,
 Assembly, awk, Bourne shell, C, C++, C shell, COBOL, Expect, Fortran,
 Java, lex/flex, LISP (including Scheme), ML (including OCaml),
-Modula-3, Objective-C, Pascal, Perl, PHP, Python, sed, TCL, and Yacc.
+Modula-3, Objective-C, Pascal, Perl, PHP, Python, sed, Tcl, and Yacc.
 SLOCCount can automatically determine if a file is a source code file
 or not, and if so, which language it's written in. As a result, you
 can analyze large systems completely automatically; it's been used to
@@ -38,7 +38,7 @@ SLOCCount mo¿e liczbyæ fizyczne linie kodu dla wielu jêzyków;
 alfabetycznie s± to: Ada, asembler, awk, pow³oka Bourne'a, C, C++,
 pow³oka C, COBOL, Expect, Fortran, Java, lex/flex, LISP (wraz ze
 Scheme), ML (w³±czaj±c OCamla), Modula-3, Objective-C, Pascal, perl,
-PHP, Python, sed, TCL oraz Yacc. SLOCCount potrafi automatycznie
+PHP, Python, sed, Tcl oraz Yacc. SLOCCount potrafi automatycznie
 okre¶liæ, czy plik jest kodem ¼ród³owym, a je¶li tak, to w jakim
 jêzyku jest napisany. W efekcie mo¿e ca³kowicie automatycznie
 analizowaæ du¿e systemy; bywa u¿ywany do okre¶lenia wielko¶ci ca³ych
