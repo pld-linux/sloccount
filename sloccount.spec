@@ -1,4 +1,5 @@
 Summary:	Measures source lines of code (SLOC) in programs
+Summary(pl):	Mierzenie liczby linii kodu (SLOC) ¼ród³owego programów
 Name:		sloccount
 Version:	2.21
 Release:	1
@@ -25,6 +26,24 @@ report-generating tools to collect the data generated and present it
 in several different formats. Normally you can just run "sloccount
 DIRECTORY" and all the source code in the directory and its
 descendants will be counted.
+
+%description -l pl
+SLOCCount (wymawiane tak jak "sloc-count") to zestaw programów do
+liczenia fizycznych linii kodu (SLOC) ¼ród³owego w potencjalnie du¿ych
+systemach oprogramowania (w ten sposób SLOCCount jest "narzêdziem
+miary oprogramowania" lub "narzêdziem mierz±cym oprogramowanie").
+SLOCCount mo¿e liczbyæ fizyczne linie kodu dla wielu jêzyków;
+alfabetycznie s± to: Ada, asembler, awk, pow³oka Bourne'a, C, C++,
+pow³oka C, COBOL, Expect, Fortran, Java, lex/flex, LISP (wraz ze
+Scheme), Modula-3, Objective-C, Pascal, perl, PHP, Python, sed, TCL
+oraz Yacc. SLOCCount potrafi automatycznie okre¶liæ, czy plik jest
+kodem ¼ród³owym, a je¶li tak, to w jakim jêzyku jest napisany. W
+efekcie mo¿e ca³kowicie automatycznie analizowaæ du¿e systemy; bywa
+u¿ywany do okre¶lenia wielko¶ci ca³ych dystrybucji GNU/Linuksa.
+SLOCCount zawiera tak¿e trochê narzêdzi do generowania raportów -
+zbieraj±cych wygenerowane dane i prezentuj±cych je w ró¿nych innych
+formatach. Zwykle wystarczy uruchomiæ "sloccount KATALOG", a ca³y kod
+¼ród³owy w katalogu i jego katalogach zostanie podliczony.
 
 %prep
 %setup -q
