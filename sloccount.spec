@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Development/Tools
 Source0:	http://www.dwheeler.com/sloccount/%{name}-%{version}.tar.gz
+# Source0-md5:	0ff88727cd76d83e7ca2071763cf1ad6
 URL:		http://www.dwheeler.com/sloccount/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
