@@ -34,7 +34,7 @@ SLOCCount (wymawiane tak jak "sloc-count") to zestaw programów do
 liczenia fizycznych linii kodu (SLOC) ¼ród³owego w potencjalnie du¿ych
 systemach oprogramowania (w ten sposób SLOCCount jest "narzêdziem
 miary oprogramowania" lub "narzêdziem mierz±cym oprogramowanie").
-SLOCCount mo¿e liczbyæ fizyczne linie kodu dla wielu jêzyków;
+SLOCCount mo¿e liczyæ fizyczne linie kodu dla wielu jêzyków;
 alfabetycznie s± to: Ada, asembler, awk, pow³oka Bourne'a, C, C++,
 pow³oka C, COBOL, Expect, Fortran, Java, lex/flex, LISP (wraz ze
 Scheme), ML (w³±czaj±c OCamla), Modula-3, Objective-C, Pascal, perl,
