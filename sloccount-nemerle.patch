@@ -1,6 +1,6 @@
-diff -ur sloccount-2.26/break_filelist sloccount-2.26.new/break_filelist
---- sloccount-2.26/break_filelist	2004-08-01 06:17:28.000000000 +0200
-+++ sloccount-2.26.new/break_filelist	2005-02-12 20:23:58.618217568 +0100
+diff -ur sloccount-2.26.orig/break_filelist sloccount-2.26.new/break_filelist
+--- sloccount-2.26.orig/break_filelist	2004-08-01 06:17:28.000000000 +0200
++++ sloccount-2.26.new/break_filelist	2005-02-13 16:01:21.259145552 +0100
 @@ -68,7 +68,6 @@
     "7" => 1,
     "8" => 1,
@@ -17,9 +17,75 @@ diff -ur sloccount-2.26/break_filelist sloccount-2.26.new/break_filelist
    # C# (C-sharp) is named 'cs', not 'c#', because
    # the '#' is a comment character and I'm trying to
    # avoid bug-prone conventions.
-diff -ur sloccount-2.26/compute_sloc_lang sloccount-2.26.new/compute_sloc_lang
---- sloccount-2.26/compute_sloc_lang	2004-08-01 05:02:54.000000000 +0200
-+++ sloccount-2.26.new/compute_sloc_lang	2005-02-12 20:32:08.849691056 +0100
+@@ -603,6 +603,55 @@
+ }
+ 
+ 
++# Cache which files are nemerle or not.
++# Key is the full file pathname; value is 1 if it is (else 0).
++%nemerle_files = ();
++
++sub really_is_nemerle {
++ my $filename = shift;
++ my $total = 1;
++ my $defs = 0;
++ my $is_nemerle = 0;
++
++ open(NEMERLE_FILE, $filename);
++ chomp($filename);
++
++ # Return cached result, if available:
++ if ($nemerle_files{$filename}) { return $php_files{$filename};}
++
++  while (<NEMERLE_FILE>) {
++    /^\s*(def|mutable) [\w']* =/ and $defs++;
++    /^\s*(match|when|unless) \(/ and $defs++;
++    /^\s*(public|internal)?\s*interface\s*I[A-Z]/ and $defs += 10;
++    /^\s*(public|internal)?\s*(type|class|interface|module|variant)\b/ and $defs++;
++    /^\s*\|\s+/ and $defs++;
++    /^\s*(public)?\s+Main\s+\(.*\)\s*:\s*void\s*{?\s*$/ and $defs += 20;
++    /^\s*macro\s+@/ and $defs += 3;
++    /^\s*macro\s+[A-Za-z]/ and $defs++;
++    /^\s*(namespace)\s*$/ and $defs += 3;
++    /^\s*(namespace)\s*[\w.]*\s*\{?$/ and $defs += 3;
++    /^\s*using\s*[\w.]*\s*;\s*$/ and $defs += 5;
++    /^\s*\[assembly:\s*System.Reflection/ and $defs += 10;
++    /\}\)/ and $defs++;
++    /^\s*(public|private|internal|protected)?\s*this\s*\(/ and $defs += 10;
++    /^\s*((public|static|private|internal|protected)\s*)*?\s*[\w]+\s*\[.*'.*\]\s*\(/ and $defs += 10;
++    /^\s*((static|public|private|internal|protected|mutable)\s*)+\w+\s*(\(.*\))?\s*:\s*[A-Za-z]/ and $defs += 2;
++
++    /^\s*\*/ and $total--;
++    /^\s*\/\// and $total--;
++    
++    $total++;
++  }
++  close(NEMERLE_FILE);
++
++  $is_nemerle = ($defs / $total * 1000) > 50;
++
++  $nemerle_files{$filename} = $is_nemerle;
++
++  return $is_nemerle;
++}
++
++
+ 
+ sub examine_dir {
+  # Given a file, determine if there are only C++, OBJC, C, or a mixture
+@@ -1087,7 +1136,8 @@
+              (($type eq "tk") && (!&really_is_expect($file_to_examine))) ||
+              (($type eq "objc") && (!&really_is_objc($file_to_examine))) ||
+              (($type eq "lex") && (!&really_is_lex($file_to_examine))) ||
+-             (($type eq "pascal") && (!&really_is_pascal($file_to_examine)))) {
++             (($type eq "pascal") && (!&really_is_pascal($file_to_examine))) ||
++             (($type eq "nemerle") && (!&really_is_nemerle($file_to_examine)))) {
+ 	  $type = "unknown";
+ 	} elsif ($type eq "inc") {
+ 	  if (&really_is_php($file_to_examine)) {
+diff -ur sloccount-2.26.orig/compute_sloc_lang sloccount-2.26.new/compute_sloc_lang
+--- sloccount-2.26.orig/compute_sloc_lang	2004-08-01 05:02:54.000000000 +0200
++++ sloccount-2.26.new/compute_sloc_lang	2005-02-13 14:54:03.671080304 +0100
 @@ -45,6 +45,7 @@
       java)   use_c_count="y" ;;
       yacc)   use_c_count="y" ;;
