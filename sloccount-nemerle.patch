@@ -1,0 +1,30 @@
+diff -ur sloccount-2.26/break_filelist sloccount-2.26.new/break_filelist
+--- sloccount-2.26/break_filelist	2004-08-01 06:17:28.000000000 +0200
++++ sloccount-2.26.new/break_filelist	2005-02-12 20:23:58.618217568 +0100
+@@ -68,7 +68,6 @@
+    "7" => 1,
+    "8" => 1,
+    "9" => 1,
+-   "n" => 1,
+    "gif" => 1,
+    "tfm" => 1,
+    "png" => 1,
+@@ -156,6 +155,7 @@
+   "C" => "cpp", "cpp" => "cpp", "cxx" => "cpp", "cc" => "cpp",
+   "pcc" => "cpp", # Input to Oracle C++ preproc.
+   "m" => "objc",
++  "n" => "nemerle",
+   # C# (C-sharp) is named 'cs', not 'c#', because
+   # the '#' is a comment character and I'm trying to
+   # avoid bug-prone conventions.
+diff -ur sloccount-2.26/compute_sloc_lang sloccount-2.26.new/compute_sloc_lang
+--- sloccount-2.26/compute_sloc_lang	2004-08-01 05:02:54.000000000 +0200
++++ sloccount-2.26.new/compute_sloc_lang	2005-02-12 20:32:08.849691056 +0100
+@@ -45,6 +45,7 @@
+      java)   use_c_count="y" ;;
+      yacc)   use_c_count="y" ;;
+      cs)     use_c_count="y" ;;
++     nemerle)use_c_count="y" ;;
+      *)      use_c_count="n" ;;
+    esac
+ 
