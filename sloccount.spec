@@ -1,5 +1,5 @@
 Summary:	Measures source lines of code (SLOC) in programs
-Summary(pl.UTF-8):   Mierzenie liczby linii kodu (SLOC) źródłowego programów
+Summary(pl.UTF-8):	Mierzenie liczby linii kodu (SLOC) źródłowego programów
 Name:		sloccount
 Version:	2.26
 Release:	2
