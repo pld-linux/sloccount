@@ -1,5 +1,5 @@
 Summary:	Measures source lines of code (SLOC) in programs
-Summary(pl):	Mierzenie liczby linii kodu (SLOC) ¼ród³owego programów
+Summary(pl.UTF-8):   Mierzenie liczby linii kodu (SLOC) ÅºrÃ³dÅ‚owego programÃ³w
 Name:		sloccount
 Version:	2.26
 Release:	2
@@ -30,23 +30,23 @@ and present it in several different formats. Normally you can just run
 "sloccount DIRECTORY" and all the source code in the directory and its
 descendants will be counted.
 
-%description -l pl
-SLOCCount (wymawiane tak jak "sloc-count") to zestaw programów do
-liczenia fizycznych linii kodu (SLOC) ¼ród³owego w potencjalnie du¿ych
-systemach oprogramowania (w ten sposób SLOCCount jest "narzêdziem
-miary oprogramowania" lub "narzêdziem mierz±cym oprogramowanie").
-SLOCCount mo¿e liczyæ fizyczne linie kodu dla wielu jêzyków;
-alfabetycznie s± to: Ada, asembler, awk, pow³oka Bourne'a, C, C++,
-pow³oka C, COBOL, Expect, Fortran, Java, lex/flex, LISP (wraz ze
-Scheme), ML (w³±czaj±c OCamla), Modula-3, Objective-C, Pascal, perl,
+%description -l pl.UTF-8
+SLOCCount (wymawiane tak jak "sloc-count") to zestaw programÃ³w do
+liczenia fizycznych linii kodu (SLOC) ÅºrÃ³dÅ‚owego w potencjalnie duÅ¼ych
+systemach oprogramowania (w ten sposÃ³b SLOCCount jest "narzÄ™dziem
+miary oprogramowania" lub "narzÄ™dziem mierzÄ…cym oprogramowanie").
+SLOCCount moÅ¼e liczyÄ‡ fizyczne linie kodu dla wielu jÄ™zykÃ³w;
+alfabetycznie sÄ… to: Ada, asembler, awk, powÅ‚oka Bourne'a, C, C++,
+powÅ‚oka C, COBOL, Expect, Fortran, Java, lex/flex, LISP (wraz ze
+Scheme), ML (wÅ‚Ä…czajÄ…c OCamla), Modula-3, Objective-C, Pascal, perl,
 PHP, Python, sed, Tcl oraz Yacc. SLOCCount potrafi automatycznie
-okre¶liæ, czy plik jest kodem ¼ród³owym, a je¶li tak, to w jakim
-jêzyku jest napisany. W efekcie mo¿e ca³kowicie automatycznie
-analizowaæ du¿e systemy; bywa u¿ywany do okre¶lenia wielko¶ci ca³ych
-dystrybucji GNU/Linuksa. SLOCCount zawiera tak¿e trochê narzêdzi do
-generowania raportów - zbieraj±cych wygenerowane dane i prezentuj±cych
-je w ró¿nych innych formatach. Zwykle wystarczy uruchomiæ "sloccount
-KATALOG", a ca³y kod ¼ród³owy w katalogu i jego katalogach zostanie
+okreÅ›liÄ‡, czy plik jest kodem ÅºrÃ³dÅ‚owym, a jeÅ›li tak, to w jakim
+jÄ™zyku jest napisany. W efekcie moÅ¼e caÅ‚kowicie automatycznie
+analizowaÄ‡ duÅ¼e systemy; bywa uÅ¼ywany do okreÅ›lenia wielkoÅ›ci caÅ‚ych
+dystrybucji GNU/Linuksa. SLOCCount zawiera takÅ¼e trochÄ™ narzÄ™dzi do
+generowania raportÃ³w - zbierajÄ…cych wygenerowane dane i prezentujÄ…cych
+je w rÃ³Å¼nych innych formatach. Zwykle wystarczy uruchomiÄ‡ "sloccount
+KATALOG", a caÅ‚y kod ÅºrÃ³dÅ‚owy w katalogu i jego katalogach zostanie
 podliczony.
 
 %prep
